@@ -7,10 +7,9 @@ Methods, Constructors, Encapsulation, Enumerations,
 Composition, Delegation, Inheritance, Method Overriding and Overloading,
 Abstract Classes, Polymorphism, Interfaces, Containers.
 
-Credits
+Credits:
+
 Sam
 Lucas
 Uttam
 Ricardo
-
-:
