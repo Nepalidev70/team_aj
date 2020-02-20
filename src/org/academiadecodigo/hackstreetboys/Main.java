@@ -10,7 +10,7 @@ public class Main {
         Obstacles obstacle = new Obstacles(100, 5, Color.CYAN);
         obstacle.drawObstacles();
         Obstacles obstacle2 = new Obstacles(10, 10, Color.PINK);
-        obstacle.drawObstacles();
+        obstacle.buildObstacles();
 
 
     }

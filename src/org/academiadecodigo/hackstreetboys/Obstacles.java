@@ -1,8 +1,24 @@
 package org.academiadecodigo.hackstreetboys;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Obstacles {
+
+    public void buildObstacles(){
+
+        Rectangle rectangle = new Rectangle(300,300,100,100);
+        rectangle.setColor(Color.LIGHT_GRAY);
+        rectangle.fill();
+
+    }
+
+
+
+
+
+
+
 
     public static final int PADDING = 10;
     private int cols;
