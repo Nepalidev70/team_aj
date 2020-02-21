@@ -7,11 +7,7 @@ public class Main {
 
         Grid newGrid = new Grid(100, 100);
         newGrid.init();
-        Obstacles obstacle = new Obstacles(100, 5, Color.CYAN);
-        obstacle.drawObstacles();
-        Obstacles obstacle2 = new Obstacles(10, 10, Color.PINK);
-        obstacle.buildObstacles();
-
-
+        Obstacles obstacle = new Obstacles();
+        obstacle.buildObstacles(Color.BLACK);
     }
 }

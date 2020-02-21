@@ -4,75 +4,44 @@ import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
 public class Obstacles {
-
-    public void buildObstacles() {
-
-        Rectangle rectangle = new Rectangle(300, 300, 100, 100);
-        rectangle.setColor(Color.LIGHT_GRAY);
-        rectangle.fill();
-
-    }
-
-
-    public static final int PADDING = 10;
-    private int cols;
-    private int rows;
-    private Color color;
-    private int cellSize = 10;
-
-    private Rectangle rectangle;
-
-    Obstacles(int cols, int rows, Color color) {
-        this.cols = cols;
-        this.rows = rows;
+    Color color;
+    public void buildObstacles(Color color) {
         this.color = color;
-    }
+        Rectangle rectangle1 = new Rectangle(00, 305, 332, 40);
+        rectangle1.setColor(color);
+        rectangle1.fill();
 
-    public void drawObstacles() {
-        rectangle = new Rectangle(PADDING, PADDING, cols * cellSize, rows * cellSize);
+        Rectangle rectangle2 = new Rectangle(330, 44, 24, 300);
+        rectangle2.setColor(color);
+        rectangle2.fill();
 
-        rectangle.setColor(this.color);
-        rectangle.draw();
-        rectangle.fill();
-    }
+        Rectangle rectangle3 = new Rectangle(329, 05, 329, 40);
+        rectangle3.setColor(color);
+        rectangle3.fill();
 
-    public int getCols() {
-        return cols;
-    }
+        Rectangle rectangle4 = new Rectangle(658, 05, 24, 600);
+        rectangle4.setColor(color);
+        rectangle4.fill();
 
-    public int getRows() {
-        return rows;
-    }
+        Rectangle rectangle5 = new Rectangle(658, 600, 178, 40);
+        rectangle5.setColor(color);
+        rectangle5.fill();
 
-    public Color getColor() {
-        return this.color;
-    }
+        Rectangle rectangle6 = new Rectangle(832, 600, 24, 300);
+        rectangle6.setColor(color);
+        rectangle6.fill();
 
-    public int getWidth() {
-        return this.rectangle.getWidth();
-    }
+        Rectangle rectangle7 = new Rectangle(832, 890, 178, 40);
+        rectangle7.setColor(color);
+        rectangle7.fill();
 
-    public int getHeight() {
-        return this.rectangle.getHeight();
-    }
+        Rectangle rectangle8 = new Rectangle(1010, 590, 35, 340);
+        rectangle8.setColor(color);
+        rectangle8.fill();
 
-    public int getX() {
-        return rectangle.getX();
-    }
+        Rectangle rectangle9 = new Rectangle(1010, 590, 155, 50);
+        rectangle9.setColor(color);
+        rectangle9.fill();
 
-    public int getY() {
-        return rectangle.getY();
-    }
-
-    public int getCellSize() {
-        return cellSize;
-    }
-
-    public int rowToY(int row) {
-        return PADDING + cellSize * row;
-    }
-
-    public int columnToX(int column) {
-        return PADDING + cellSize * column;
     }
 }
