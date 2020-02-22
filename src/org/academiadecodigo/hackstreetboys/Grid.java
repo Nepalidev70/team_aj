@@ -2,6 +2,7 @@ package org.academiadecodigo.hackstreetboys;
 
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Grid {
 
@@ -18,10 +19,9 @@ public class Grid {
     }
 
     public void init() {
-        rectangle = new Rectangle(PADDING, PADDING, cols * cellSize, rows * cellSize);
-        rectangle.draw();
-        rectangle.setColor(Color.BLACK);
-        rectangle.fill();
+        Picture background = new Picture(0,0,"resources/backgroundLisbon.png");
+        background.grow(00,00);
+        background.draw();
     }
 
     public int getCols() {
