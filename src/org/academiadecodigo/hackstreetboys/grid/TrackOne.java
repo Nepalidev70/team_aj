@@ -1,5 +1,6 @@
 package org.academiadecodigo.hackstreetboys.grid;
 
+import org.academiadecodigo.hackstreetboys.moveLogic.Direction;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
@@ -13,8 +14,11 @@ public class TrackOne implements Track {
     private int cols;
     private int rows;
     private int cellSize = 10;
-
     private Rectangle rectangle;
+
+    private Direction carStartingDirection = Direction.E;
+    private static final int carStartX = 10;
+    private static final int carStartY = 320;
 
     private LinkedList<Rectangle> roadRectangleContainer = new LinkedList<>();
 
@@ -28,6 +32,20 @@ public class TrackOne implements Track {
         background.grow(00,00);
         background.draw();
         buildRoad(roadColor);
+    }
+
+    @Override
+    public int getCarStartX() {
+        return carStartX;
+    }
+
+    @Override
+    public int getCarStartY() {
+        return carStartY;
+    }
+
+    public Direction getCarStartingDirection(){
+        return this.carStartingDirection;
     }
 
     public int getCols() {

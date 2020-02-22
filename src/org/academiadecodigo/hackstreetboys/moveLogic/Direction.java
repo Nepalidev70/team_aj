@@ -1,6 +1,6 @@
 package org.academiadecodigo.hackstreetboys.moveLogic;
 
-public enum Directions {
+public enum Direction {
     N,
     NE,
     E,
