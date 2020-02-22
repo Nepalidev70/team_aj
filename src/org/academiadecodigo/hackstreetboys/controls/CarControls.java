@@ -37,7 +37,7 @@ public class CarControls implements KeyboardHandler {
     public void keyPressed(KeyboardEvent keyboardEvent) {
 
         switch (keyboardEvent.getKey()) {
-            
+
             case KeyboardEvent.KEY_A:
                 //CARD DOES MORE SHEET
                 break;
