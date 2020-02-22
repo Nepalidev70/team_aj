@@ -17,8 +17,5 @@ public class Main {
         carControls.setCar(car1);
         carControls.init();
 
-
-
-
-        }
+    }
 }
