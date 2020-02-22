@@ -2,20 +2,21 @@ package org.academiadecodigo.hackstreetboys;
 
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 
 public class Car {
-    Color color;
+    private Picture raceCarPicture;
 
-    public void buildCar(Color color) {
-        this.color = color;
-        Rectangle car = new Rectangle(10, 320, 20, 10);
-        car.setColor(color);
-        car.fill();
+    public void buildCar() {
+        this.raceCarPicture = new Picture(10, 320, "resources/smallRacecar.jpg");
+        this.raceCarPicture.draw();
     }
 
-   // public void moveRight() { car.translate(10, 0); }
-  //  public void moveLeft() {car.translate(0, 10);}
+    public void moveRight() {
+        this.raceCarPicture.translate(10, 0);
+    }
+
 
 
 
