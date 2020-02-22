@@ -7,7 +7,7 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Grid {
+public class TrackOne implements Track {
 
     public static final int PADDING = 10;
     private int cols;
@@ -18,7 +18,7 @@ public class Grid {
 
     private LinkedList<Rectangle> roadRectangleContainer = new LinkedList<>();
 
-    public Grid(int cols, int rows) {
+    public TrackOne(int cols, int rows) {
         this.cols = cols;
         this.rows = rows;
     }
@@ -66,8 +66,7 @@ public class Grid {
         return PADDING + cellSize * column;
     }
 
-
-    private void buildRoad(Color color) {
+    public void buildRoad(Color color) {
 
         Rectangle rectangle1 = new Rectangle(00, 305, 332, 40);
         rectangle1.setColor(color);

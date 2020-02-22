@@ -1,4 +1,4 @@
-package org.academiadecodigo.hackstreetboys;
+package org.academiadecodigo.hackstreetboys.gameobjects;
 
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
