@@ -8,7 +8,7 @@ public class Main {
         Grid newGrid = new Grid(100, 100);
         newGrid.init();
         Obstacles obstacle = new Obstacles();
-        obstacle.buildObstacles(Color.BLACK);
+        obstacle.buildObstacles(Color.PINK);
         Car car = new Car();
         car.buildCar(Color.BLUE);
     }
