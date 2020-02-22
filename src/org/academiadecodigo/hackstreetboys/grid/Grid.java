@@ -4,6 +4,7 @@ import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class Grid {
@@ -15,7 +16,7 @@ public class Grid {
 
     private Rectangle rectangle;
 
-    private List<Rectangle> roadRectangleContainer;
+    private LinkedList<Rectangle> roadRectangleContainer = new LinkedList<>();
 
     public Grid(int cols, int rows) {
         this.cols = cols;
