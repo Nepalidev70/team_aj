@@ -117,12 +117,13 @@ public class Grid {
     }
 
     public boolean isOnRoad(int nextX, int nextY){
+        boolean finalBoolean = false;
         for(Rectangle road : roadRectangleContainer){
-            if(nextX < road.getX() || nextX > road.getX() + road.getWidth() || nextY < road.getY() || nextY > road.getY() + road.getHeight() ){
-                return false;
+            if(nextX >= road.getX() && nextX <= road.getX() + road.getWidth() && nextY >= road.getY() && nextY <= road.getY() + road.getHeight() ){
+                finalBoolean = true;
             }
         }
-        return true;
+        return finalBoolean;
     }
 
 }
