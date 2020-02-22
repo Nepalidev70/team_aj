@@ -1,5 +1,6 @@
 package org.academiadecodigo.hackstreetboys.controls;
 
+import org.academiadecodigo.hackstreetboys.Car;
 import org.academiadecodigo.hackstreetboys.Player;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
@@ -10,6 +11,7 @@ public class CarControls implements KeyboardHandler {
 
     private Player currentPlayer;
     private Keyboard keyboard;
+    private Car car;
 
     public void init() {
 
@@ -39,14 +41,18 @@ public class CarControls implements KeyboardHandler {
         switch (keyboardEvent.getKey()) {
 
             case KeyboardEvent.KEY_A:
-                //CARD DOES MORE SHEET
+               // this.car.moveRight();
                 break;
 
             case KeyboardEvent.KEY_D:
-                //CAR DOES SHEET
+             //   this.car.moveLeft();
                 break;
         }
 
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
     }
 
     @Override
