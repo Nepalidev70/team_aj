@@ -15,6 +15,15 @@ public class CarControls implements KeyboardHandler {
 
         keyboard = new Keyboard(this);
 
+
+
+        // -- A -- //
+        KeyboardEvent aPressed = new KeyboardEvent();
+        aPressed.setKey(KeyboardEvent.KEY_A);
+        aPressed.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+
+        keyboard.addEventListener(aPressed);
+
         // -- D -- //
         KeyboardEvent dPressed = new KeyboardEvent();
         dPressed.setKey(KeyboardEvent.KEY_D);
@@ -22,26 +31,19 @@ public class CarControls implements KeyboardHandler {
 
         keyboard.addEventListener(dPressed);
 
-        // -- A -- //
-        KeyboardEvent aPressed = new KeyboardEvent();
-        dPressed.setKey(KeyboardEvent.KEY_A);
-        dPressed.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
-
-        keyboard.addEventListener(aPressed);
-
     }
 
     @Override
     public void keyPressed(KeyboardEvent keyboardEvent) {
 
         switch (keyboardEvent.getKey()) {
+            
+            case KeyboardEvent.KEY_A:
+                //CARD DOES MORE SHEET
+                break;
 
             case KeyboardEvent.KEY_D:
                 //CAR DOES SHEET
-                break;
-
-            case KeyboardEvent.KEY_A:
-                //CARD DOES MORE SHEET
                 break;
         }
 

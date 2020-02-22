@@ -1,0 +1,18 @@
+1. Grid - Lucas
+2. Track - Lucas is working on this
+3. Controls left right - Ricardo
+3a. ENUM of directions - Sam
+4. Car - Lucas
+5a build.xml file - Uttam
+5. Hitting the wall reduces speed to zero - unassigned
+6. Sound fx Library - Uttam all over it
+7. player vs timer, we need a timer for the game
+8. Splash page - unassigned
+
+
+
+
+
+
+
+

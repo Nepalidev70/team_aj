@@ -1,0 +1,16 @@
+Game Requirements
+
+1. Top down racing game
+2. player vs timer, we need a timer for the game.
+3. 1 player at a time
+4. Controls left right game
+5. Hitting objects reduces speed
+6. Splash page
+7. Sound fx Library
+8. Grid - Lucas already sorted!!!!
+9. Track - Lucas is working on this
+10. Car
+
+
+Press enter to start
+Controls page listing controls and any other fancy shit
