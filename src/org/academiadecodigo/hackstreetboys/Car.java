@@ -13,6 +13,10 @@ public class Car {
         this.raceCarPicture.draw();
     }
 
+    public void moveLeft() {
+        this.raceCarPicture.translate(-10, 00);
+    }
+
     public void moveRight() {
         this.raceCarPicture.translate(10, 0);
     }

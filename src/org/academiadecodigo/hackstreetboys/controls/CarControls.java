@@ -41,11 +41,11 @@ public class CarControls implements KeyboardHandler {
         switch (keyboardEvent.getKey()) {
 
             case KeyboardEvent.KEY_A:
-               // this.car.moveRight();
+                this.car.moveLeft();
                 break;
 
             case KeyboardEvent.KEY_D:
-                System.out.println("called");
+ //               System.out.println("called");
                 this.car.moveRight();
                 break;
         }
