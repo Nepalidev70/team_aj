@@ -9,5 +9,7 @@ public class Main {
         newGrid.init();
         Obstacles obstacle = new Obstacles();
         obstacle.buildObstacles(Color.BLACK);
+        Car car = new Car();
+        car.buildCar(Color.BLUE);
     }
 }
