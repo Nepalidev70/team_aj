@@ -13,9 +13,10 @@ public class Main {
         trackOne.init(Color.BLACK);
         CarControls carControls = new CarControls();
         Car car1 = new Car();
-        car1.buildCar();
+        car1.buildCar(trackOne.getCarStartingDirection(), trackOne.getCarStartX(),trackOne.getCarStartY());
         carControls.setCar(car1);
         carControls.init();
 
     }
+
 }
