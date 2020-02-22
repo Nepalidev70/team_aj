@@ -1,6 +1,6 @@
 package org.academiadecodigo.hackstreetboys.controls;
 
-import org.academiadecodigo.hackstreetboys.Car;
+import org.academiadecodigo.hackstreetboys.gameobjects.Car;
 import org.academiadecodigo.hackstreetboys.Player;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
