@@ -9,7 +9,7 @@ public class Car {
     private Picture raceCarPicture;
 
     public void buildCar() {
-        this.raceCarPicture = new Picture(10, 320, "resources/smallRacecar.jpg");
+        this.raceCarPicture = new Picture(10, 315, "resources/smallCarE.png");
         this.raceCarPicture.draw();
     }
 
