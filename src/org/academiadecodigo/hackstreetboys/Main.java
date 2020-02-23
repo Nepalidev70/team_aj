@@ -4,7 +4,10 @@ import org.academiadecodigo.hackstreetboys.controls.CarControls;
 import org.academiadecodigo.hackstreetboys.gameobjects.Car;
 import org.academiadecodigo.hackstreetboys.grid.Track;
 import org.academiadecodigo.hackstreetboys.grid.TrackOne;
+import org.academiadecodigo.hackstreetboys.music.JLayer;
 import org.academiadecodigo.simplegraphics.graphics.Color;
+
+import java.io.File;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,6 +19,15 @@ public class Main {
         car1.buildCar(trackOne.getCarStartingDirection(), trackOne.getCarStartX(),trackOne.getCarStartY());
         carControls.setCar(car1);
         carControls.init();
+        String path = "resources/mymusic.mp3";
+        File mp3File = new File(path);
+        JLayer.PlayMp3 music = new JLayer.PlayMp3();
+        music.play(mp3File);
+        music.start();
+
+
+
+
 
     }
 
