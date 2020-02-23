@@ -2,6 +2,7 @@ package org.academiadecodigo.hackstreetboys;
 
 import org.academiadecodigo.hackstreetboys.controls.CarControls;
 import org.academiadecodigo.hackstreetboys.gameobjects.Car;
+import org.academiadecodigo.hackstreetboys.gameobjects.TimerForGame;
 import org.academiadecodigo.hackstreetboys.grid.Track;
 import org.academiadecodigo.hackstreetboys.grid.TrackOne;
 import org.academiadecodigo.hackstreetboys.music.JLayer;
