@@ -17,8 +17,6 @@ public class CarControls implements KeyboardHandler {
 
         keyboard = new Keyboard(this);
 
-
-
         // -- A -- //
         KeyboardEvent aPressed = new KeyboardEvent();
         aPressed.setKey(KeyboardEvent.KEY_A);

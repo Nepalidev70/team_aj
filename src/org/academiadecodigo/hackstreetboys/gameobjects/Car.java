@@ -47,7 +47,7 @@ public class Car {
                 this.raceCarPicture = new Picture(xPosition,yPosition,"resources/smallCarW.png");
                 break;
             case NW:
-                this.raceCarPicture = new Picture(xPosition,yPosition,"resources/smallCarNO.png");
+                this.raceCarPicture = new Picture(xPosition,yPosition,"resources/smallCarNW.png");
                 break;
             case N:
                 this.raceCarPicture = new Picture(xPosition,yPosition,"resources/smallCarN.png");
