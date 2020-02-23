@@ -17,11 +17,11 @@ import java.io.FileInputStream;
                     FileInputStream fis = new FileInputStream(mp3);
                     BufferedInputStream bis = new BufferedInputStream(fis);
                     this.player = new Player(bis);
-                    System.out.println("Tocando Musica!");
+       //             System.out.println("Tocando Musica!");
                     this.player.play();
-                    System.out.println("Terminado Musica!");
+       //             System.out.println("Terminado Musica!");
                 } catch (Exception e) {
-                    System.out.println("Problema ao tocar Musica" + mp3);
+                     System.out.println("Problema ao tocar Musica" + mp3);
                     e.printStackTrace();
                 }
             }

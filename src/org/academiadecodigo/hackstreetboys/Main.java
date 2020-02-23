@@ -25,6 +25,8 @@ public class Main {
         music.play(mp3File);
         music.start();
 
+        TimerForGame stopwatch = new TimerForGame();
+        stopwatch.start();
 
 
 
