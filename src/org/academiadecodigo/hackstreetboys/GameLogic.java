@@ -27,9 +27,8 @@ public class GameLogic {
 
             carControls.setCar(car1);
             carControls.init();
+
             String path = "resources/mymusic.mp3";
-
-
             File mp3File = new File(path);
             JLayer.PlayMp3 music = new JLayer.PlayMp3();
             music.play(mp3File);

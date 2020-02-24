@@ -23,7 +23,6 @@ public class TimerForGame {
                 minutesPassed++;
                 secondsElapsed=0;
             }
-
             System.out.println("time elapsed: " + minutesPassed + ":" + secondsElapsed + ":" + millisecondsElapsed);
         }
     };
