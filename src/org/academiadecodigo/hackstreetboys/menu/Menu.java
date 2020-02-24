@@ -10,7 +10,6 @@ public interface Menu {
 
     public void selectionDown();
 
-
     public void secretStuff();
 
 }

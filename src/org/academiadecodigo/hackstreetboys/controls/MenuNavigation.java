@@ -88,7 +88,7 @@ public class MenuNavigation implements KeyboardHandler {
     public void keyReleased(KeyboardEvent keyboardEvent) {
     }
 
-    public void setCurrentPlayer(Menu currentMenu) {
+    public void setCurrentMenu(Menu currentMenu) {
         this.currentMenu = currentMenu;
     }
 }
