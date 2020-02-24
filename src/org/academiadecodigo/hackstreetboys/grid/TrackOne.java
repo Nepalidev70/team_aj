@@ -14,11 +14,13 @@ public class TrackOne implements Track {
     private int cols;
     private int rows;
     private int cellSize = 10;
-    private Rectangle rectangle;
+    private Picture background;
 
     private Direction carStartingDirection = Direction.E;
     private static final int carStartX = 20;
     private static final int carStartY = 320;
+    private static final int finishX = 1160;
+    private static final int finishY = 590;
 
     private LinkedList<Rectangle> roadRectangleContainer = new LinkedList<>();
 
@@ -28,7 +30,7 @@ public class TrackOne implements Track {
     }
 
     public void init(Color roadColor) {
-        Picture background = new Picture(0,0,"resources/backgroundLisbon.png");
+        this.background = new Picture(0,0,"resources/backgroundLisbon.png");
         background.grow(00,00);
         background.draw();
         buildRoad(roadColor);
@@ -57,19 +59,19 @@ public class TrackOne implements Track {
     }
 
     public int getWidth() {
-        return this.rectangle.getWidth();
+        return this.background.getWidth();
     }
 
     public int getHeight() {
-        return this.rectangle.getHeight();
+        return this.background.getHeight();
     }
 
     public int getX() {
-        return rectangle.getX();
+        return background.getX();
     }
 
     public int getY() {
-        return rectangle.getY();
+        return background.getY();
     }
 
     public int getCellSize() {
@@ -136,35 +138,25 @@ public class TrackOne implements Track {
     public boolean isOnRoad(int nextX, int nextY){
         boolean finalBoolean = false;
         for(Rectangle road : roadRectangleContainer){
-            /*
-            System.out.println("---");
-            System.out.println(nextX);
-            System.out.println( ">=" );
-            System.out.println(road.getX());
-            System.out.println("---");
-            System.out.println(nextX);
-            System.out.println("<=");
-            System.out.println(road.getWidth());
-            System.out.println(nextX <= road.getX() + road.getWidth());
-            System.out.println("----");
-            System.out.println(nextY);
-            System.out.println(">=");
-            System.out.println(road.getY());
-            System.out.println(nextY >= road.getY());
-            System.out.println("----");
-            System.out.println(nextY);
-            System.out.println("<=");
-            System.out.println(road.getHeight());
-            System.out.println(nextY <= road.getY() + road.getHeight());
-            System.out.println("---");
-            System.out.println("END OF RECTANGLE");
-
-             */
             if(nextX >= road.getX() && nextX <= road.getX() + road.getWidth() && nextY >= road.getY() && nextY <= road.getY() + road.getHeight() ){
                 finalBoolean = true;
             }
         }
         return finalBoolean;
+    }
+
+    public boolean hasFinished(int x, int y){
+        if(x >= finishX && y > finishY){
+            return true;
+        }
+        return false;
+    }
+
+    public void deleteTrack(){
+        background.delete();
+        for(Rectangle rct : roadRectangleContainer){
+            rct.delete();
+        }
     }
 
 }

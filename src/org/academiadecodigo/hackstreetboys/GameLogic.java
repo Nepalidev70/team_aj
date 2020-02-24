@@ -8,17 +8,20 @@ import org.academiadecodigo.hackstreetboys.grid.Track;
 import org.academiadecodigo.hackstreetboys.grid.TrackOne;
 import org.academiadecodigo.hackstreetboys.moveLogic.MovementLogic;
 import org.academiadecodigo.hackstreetboys.music.JLayer;
+import org.academiadecodigo.simplegraphics.graphics.Canvas;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 
 import java.io.File;
 
 public class GameLogic {
 
+    CarControls carControls;
+
     public GameLogic() {
 
             Track trackOne = new TrackOne(100, 100);
             trackOne.init(Color.BLACK);
-            CarControls carControls = new CarControls();
+            this.carControls = new CarControls();
             Car car1 = new Car();
             car1.buildCar(trackOne.getCarStartingDirection(), trackOne.getCarStartX(),trackOne.getCarStartY());
 
@@ -46,18 +49,24 @@ public class GameLogic {
                 @Override
                 public void run() {
                     int currentSpeed = 200;
-                    while (true){
+                    boolean raceHasFinished = false;
+                    while (!raceHasFinished){
                         try {
                             Thread.sleep(currentSpeed);
                         } catch (InterruptedException e) {}
                         Boolean isMoving = MovementLogic.moveCar(car1,trackOne);
+                        raceHasFinished = trackOne.hasFinished(car1.getX(),car1.getY());
                         if(isMoving && currentSpeed>= 50){
                             currentSpeed -= 7;
                         } else if(!isMoving){
                             currentSpeed = 200;
                         }
-
                     }
+                    music.stop();
+                    car1.getCarBody().delete();
+                    car1.getFrontBumper().delete();
+                    carControls.stop();
+                    trackOne.deleteTrack();
                 }
             });
             movementThread.start();
