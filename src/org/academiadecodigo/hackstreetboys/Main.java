@@ -48,10 +48,17 @@ public class Main {
         Thread movementThread = new Thread(new Runnable() {
             @Override
             public void run() {
+                int currentSpeed = 200;
                 while (true){
-                    MovementLogic.moveCar(car1,trackOne);
+                    boolean isMoving = MovementLogic.moveCar(car1,trackOne);
+                    if(isMoving && currentSpeed >= 50){
+                        currentSpeed -= 7;
+                    } else if(!isMoving) {
+                        currentSpeed = 200;
+                    }
+                    System.out.println(currentSpeed);
                     try {
-                        Thread.sleep(100);
+                        Thread.sleep(currentSpeed);
                     } catch (InterruptedException e) {}
 
                 }
@@ -61,10 +68,10 @@ public class Main {
 
 
 
-
+        /*
         SplashScreen splash = new SplashScreen();
         splash.init();
-
+        */
 
 
 
