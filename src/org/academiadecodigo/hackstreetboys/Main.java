@@ -1,11 +1,11 @@
 package org.academiadecodigo.hackstreetboys;
 
 import org.academiadecodigo.hackstreetboys.controls.CarControls;
+import org.academiadecodigo.hackstreetboys.controls.MenuNavigation;
 import org.academiadecodigo.hackstreetboys.gameobjects.Car;
-import org.academiadecodigo.hackstreetboys.gameobjects.TimerForGame;
-import org.academiadecodigo.hackstreetboys.grid.SplashScreen;
 import org.academiadecodigo.hackstreetboys.grid.Track;
 import org.academiadecodigo.hackstreetboys.grid.TrackOne;
+import org.academiadecodigo.hackstreetboys.menu.SplashScreen;
 import org.academiadecodigo.hackstreetboys.moveLogic.MovementLogic;
 import org.academiadecodigo.hackstreetboys.music.JLayer;
 import org.academiadecodigo.simplegraphics.graphics.Color;
@@ -13,7 +13,12 @@ import org.academiadecodigo.simplegraphics.graphics.Color;
 import java.io.File;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+
+        SplashScreen splash = new SplashScreen();
+        MenuNavigation menuControls = new MenuNavigation();
+        menuControls.setCurrentMenu(splash);
+        splash.init();
 
         Track trackOne = new TrackOne(100, 100);
         trackOne.init(Color.BLACK);
@@ -25,15 +30,10 @@ public class Main {
         carControls.init();
         String path = "resources/mymusic.mp3";
 
-
         File mp3File = new File(path);
         JLayer.PlayMp3 music = new JLayer.PlayMp3();
         music.play(mp3File);
         music.start();
-
-
-
-
 
         /*
         Thread timerThread = new Thread(new Runnable() {
@@ -65,15 +65,6 @@ public class Main {
             }
         });
         movementThread.start();
-
-
-
-        /*
-        SplashScreen splash = new SplashScreen();
-        splash.init();
-        */
-
-
 
     }
 
