@@ -19,13 +19,19 @@ public class Main {
         CarControls carControls = new CarControls();
         Car car1 = new Car();
         car1.buildCar(trackOne.getCarStartingDirection(), trackOne.getCarStartX(),trackOne.getCarStartY());
+
         carControls.setCar(car1);
         carControls.init();
         String path = "resources/mymusic.mp3";
+
+
         File mp3File = new File(path);
         JLayer.PlayMp3 music = new JLayer.PlayMp3();
         music.play(mp3File);
         music.start();
+
+
+
 
 
         /*
@@ -42,10 +48,11 @@ public class Main {
             @Override
             public void run() {
                 while (true){
-                    try {
-                        Thread.sleep(500);
-                    } catch (InterruptedException e) {}
                     MovementLogic.moveCar(car1,trackOne);
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {}
+
                 }
             }
         });

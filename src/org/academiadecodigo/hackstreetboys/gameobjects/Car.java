@@ -1,6 +1,8 @@
 package org.academiadecodigo.hackstreetboys.gameobjects;
 
+import org.academiadecodigo.hackstreetboys.grid.Track;
 import org.academiadecodigo.hackstreetboys.moveLogic.Direction;
+import org.academiadecodigo.hackstreetboys.moveLogic.MovementLogic;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
@@ -99,7 +101,6 @@ public class Car {
         }
         raceCarPicture.delete();
     }
-
 
 
 

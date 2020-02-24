@@ -10,9 +10,8 @@ public final class MovementLogic {
 
     public static boolean moveCar(Car car, Track currentTrack){
         int nextX = xDirectionalMove(car.getCurrentDirection(),car.getFrontBumper());
-        int nextY = xDirectionalMove(car.getCurrentDirection(),car.getFrontBumper());
+        int nextY = yDirectionalMove(car.getCurrentDirection(),car.getFrontBumper());
         if(currentTrack.isOnRoad(nextX,nextY)){
-            System.out.println("its on track");
             switch (car.getCurrentDirection()){
                 case E:
                     moveCarBody(10,0,car);
@@ -40,7 +39,6 @@ public final class MovementLogic {
                     return true;
             }
         }
-        System.out.println("Somehow not on track");
         return false;
     }
 
