@@ -62,8 +62,8 @@ public class Main {
 
 
 
-       SplashScreen splash = new SplashScreen();
-       splash.init();
+  //     SplashScreen splash = new SplashScreen();
+  //     splash.init();
 
 
 
