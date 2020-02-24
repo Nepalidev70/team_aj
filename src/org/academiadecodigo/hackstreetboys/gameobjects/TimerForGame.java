@@ -1,11 +1,13 @@
 package org.academiadecodigo.hackstreetboys.gameobjects;
 
+import org.academiadecodigo.hackstreetboys.grid.EndScreen;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class TimerForGame {
 
-    private int secondsElapsed = 40 ;
+    private int secondsElapsed = 00 ;
     private int millisecondsElapsed = 00;
     private int minutesPassed = 00;
 
@@ -24,8 +26,22 @@ public class TimerForGame {
                 secondsElapsed=0;
             }
             System.out.println("time elapsed: " + minutesPassed + ":" + secondsElapsed + ":" + millisecondsElapsed);
+
         }
     };
+
+
+    private EndScreen endScreen = new EndScreen();
+
+
+    public void endGame() {
+        if (this.getSecondsElapsed() <= 45) {
+            endScreen.init(10, this.getSecondsElapsed(), 10);
+
+        } else {
+            endScreen.gameOver();
+        }
+    }
 
     public int getSecondsElapsed() {
         return secondsElapsed;

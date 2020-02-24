@@ -23,7 +23,7 @@ public class EndScreen implements KeyboardHandler {
     File mp3File = new File(path);
     JLayer.PlayMp3 music = new JLayer.PlayMp3();
 
-    Keyboard keyboard = new Keyboard(this);
+    Keyboard keyboard2 = new Keyboard(this);
 
     public void init(int minute, int seconds, int milliseconds) {
 
@@ -67,6 +67,12 @@ public class EndScreen implements KeyboardHandler {
 
 //GAME OVER
         public void gameOver () {
+
+            // -- SPACE -- //
+            KeyboardEvent spacePressed = new KeyboardEvent();
+            spacePressed.setKey(KeyboardEvent.KEY_SPACE);
+            spacePressed.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+            keyboard2.addEventListener(spacePressed);
             music.play(mp3File);
             music.start();
 
@@ -95,19 +101,20 @@ public class EndScreen implements KeyboardHandler {
                 }
             }
         }
-        background.delete();
+            keyboard2.removeEventListener(spacePressed);
+            background.delete();
     }
 
     @Override
     public void keyPressed(KeyboardEvent keyboardEvent) {
-
         switch (keyboardEvent.getKey()) {
+
             case KeyboardEvent.KEY_SPACE:
                 keyPressed = true;
                 GameLogic gameLogic = new GameLogic();
+                music.stop();
+
                 break;
-            case KeyboardEvent.KEY_Q:
-                //QUIT!
         }
     }
 

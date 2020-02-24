@@ -13,6 +13,7 @@ import org.academiadecodigo.simplegraphics.graphics.Canvas;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 
 import java.io.File;
+import java.util.LinkedList;
 
 public class GameLogic {
 
@@ -36,20 +37,18 @@ public class GameLogic {
             music.start();
             EndScreen endScreen = new EndScreen();
 
+
             Thread timerThread = new Thread(new Runnable() {
+
+                TimerForGame stopwatch = new TimerForGame();
+
+                public TimerForGame getStopwatch() {
+                    return stopwatch;
+                }
+
                 @Override
                 public void run() {
-                    TimerForGame stopwatch = new TimerForGame();
                     stopwatch.start();
-
-                    public void endGame() {
-                        if (stopwatch.getSecondsElapsed() <= 45) {
-                            endScreen.init(10, stopwatch.getSecondsElapsed(), 10);
-
-                        } else {
-                            endScreen.gameOver();
-                        }
-                    }
                 }
             });
             timerThread.start();
@@ -76,6 +75,8 @@ public class GameLogic {
                     car1.getFrontBumper().delete();
                     carControls.stop();
                     trackOne.deleteTrack();
+                    endScreen.gameOver();
+
                 }
             });
             movementThread.start();
