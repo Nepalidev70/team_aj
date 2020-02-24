@@ -5,9 +5,9 @@ import java.util.TimerTask;
 
 public class TimerForGame {
 
-    int secondsElapsed = 00 ;
-    int millisecondsElapsed = 00;
-    int minutesPassed = 00;
+    private int secondsElapsed = 40 ;
+    private int millisecondsElapsed = 00;
+    private int minutesPassed = 00;
 
 
     Timer lapTime = new Timer();
@@ -27,6 +27,9 @@ public class TimerForGame {
         }
     };
 
+    public int getSecondsElapsed() {
+        return secondsElapsed;
+    }
 
     public void start() {
         lapTime.scheduleAtFixedRate(task, 0, 1);

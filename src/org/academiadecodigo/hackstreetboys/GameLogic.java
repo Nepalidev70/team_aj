@@ -3,6 +3,7 @@ package org.academiadecodigo.hackstreetboys;
 import org.academiadecodigo.hackstreetboys.controls.CarControls;
 import org.academiadecodigo.hackstreetboys.gameobjects.Car;
 import org.academiadecodigo.hackstreetboys.gameobjects.TimerForGame;
+import org.academiadecodigo.hackstreetboys.grid.EndScreen;
 import org.academiadecodigo.hackstreetboys.grid.SplashScreen;
 import org.academiadecodigo.hackstreetboys.grid.Track;
 import org.academiadecodigo.hackstreetboys.grid.TrackOne;
@@ -30,13 +31,22 @@ public class GameLogic {
             JLayer.PlayMp3 music = new JLayer.PlayMp3();
             music.play(mp3File);
             music.start();
-
+            EndScreen endScreen = new EndScreen();
 
             Thread timerThread = new Thread(new Runnable() {
                 @Override
                 public void run() {
                     TimerForGame stopwatch = new TimerForGame();
                     stopwatch.start();
+
+                    public void endGame() {
+                        if (stopwatch.getSecondsElapsed() <= 45) {
+                            endScreen.init(10, stopwatch.getSecondsElapsed(), 10);
+
+                        } else {
+                            endScreen.gameOver();
+                        }
+                    }
                 }
             });
             timerThread.start();
