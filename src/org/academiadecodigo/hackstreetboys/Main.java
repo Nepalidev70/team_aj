@@ -35,7 +35,7 @@ public class Main {
 
 
 
-        /*
+
         Thread timerThread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -44,7 +44,7 @@ public class Main {
             }
         });
         timerThread.start();
-*/
+
         Thread movementThread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -62,8 +62,8 @@ public class Main {
 
 
 
-        SplashScreen splash = new SplashScreen();
-        splash.init();
+       SplashScreen splash = new SplashScreen();
+       splash.init();
 
 
 

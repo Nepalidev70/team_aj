@@ -13,10 +13,33 @@ public class SplashScreen {
     private Rectangle rectangle;
 
     public void init() {
-        Picture background = new Picture(0,0,"resources/SplashScreen1.png");
-        background.grow(00,00);
-        background.draw();
+        while (true) {
+            boolean draw1 = false;
 
+            if (!draw1) {
+                try {
+                    Thread.sleep(1000);
+                Picture background = new Picture(0, 0, "resources/SplashScreen1.png");
+                background.grow(00, 00);
+                background.draw();
+                draw1 = true;
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+            }
+            if (draw1) {
+                try {
+                    Thread.sleep(1000);
+                    Picture background2 = new Picture(0, 0, "resources/SplashScreen2.png");
+                    background2.grow(00, 00);
+                    background2.draw();
+                    draw1 = false;
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
 
