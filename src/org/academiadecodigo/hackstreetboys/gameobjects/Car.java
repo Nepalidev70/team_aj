@@ -16,56 +16,88 @@ public class Car {
 
     public int getY(){return collisionDetection.getY();}
 
+    public Picture getCarBody(){
+        return raceCarPicture;
+    }
+
+    public Rectangle getFrontBumper(){
+        return collisionDetection;
+    }
+
+    public Direction getCurrentDirection(){
+        return currentDirection;
+    }
+
     public void buildCar(Direction direction, int xPosition, int yPosition) {
         this.currentDirection = direction;
-        setCurrentDirection(direction,xPosition,yPosition);
-        this.raceCarPicture.draw();
         makeFrontBumper(xPosition,yPosition);
+        setCurrentDirection(direction);
     }
 
     private void makeFrontBumper(int xPosition, int yPosition){
-        this.collisionDetection = new Rectangle((double)xPosition + 10,(double)yPosition,10,10);
+        this.collisionDetection = new Rectangle((double)xPosition,(double)yPosition,10,10);
         this.collisionDetection.setColor(Color.BLACK);
         this.collisionDetection.draw();
     }
 
-    public void setCurrentDirection(Direction newDirection,int xPosition, int yPosition){
+    public void setCurrentDirection(Direction newDirection){
         switch (newDirection){
             case E:
-                this.raceCarPicture = new Picture(xPosition,yPosition,"resources/smallCarE.png");
+                deleteCarBody();
+                this.raceCarPicture = new Picture(getX()-10,getY(),"resources/smallCarE.png");
+                raceCarPicture.draw();
+                currentDirection = newDirection;
                 break;
             case SE:
-                this.raceCarPicture = new Picture(xPosition,yPosition,"resources/smallCarSE.png");
+                deleteCarBody();
+                this.raceCarPicture = new Picture(getX()-10,getY()-10,"resources/smallCarSE.png");
+                raceCarPicture.draw();
+                currentDirection = newDirection;
                 break;
             case S:
-                this.raceCarPicture = new Picture(xPosition,yPosition,"resources/smallCarS.png");
+                deleteCarBody();
+                this.raceCarPicture = new Picture(getX(),getY()-10,"resources/smallCarS.png");
+                raceCarPicture.draw();
+                currentDirection = newDirection;
                 break;
             case SW:
-                this.raceCarPicture = new Picture(xPosition,yPosition,"resources/smallCarSW.png");
+                deleteCarBody();
+                this.raceCarPicture = new Picture(getX(),getY()-10,"resources/smallCarSW.png");
+                raceCarPicture.draw();
+                currentDirection = newDirection;
                 break;
             case W:
-                this.raceCarPicture = new Picture(xPosition,yPosition,"resources/smallCarW.png");
+                deleteCarBody();
+                this.raceCarPicture = new Picture(getX(),getY(),"resources/smallCarW.png");
+                raceCarPicture.draw();
+                currentDirection = newDirection;
                 break;
             case NW:
-                this.raceCarPicture = new Picture(xPosition,yPosition,"resources/smallCarNW.png");
+                deleteCarBody();
+                this.raceCarPicture = new Picture(getX(),getY(),"resources/smallCarNW.png");
+                raceCarPicture.draw();
+                currentDirection = newDirection;
                 break;
             case N:
-                this.raceCarPicture = new Picture(xPosition,yPosition,"resources/smallCarN.png");
+                deleteCarBody();
+                this.raceCarPicture = new Picture(getX(),getY(),"resources/smallCarN.png");
+                raceCarPicture.draw();
+                currentDirection = newDirection;
                 break;
             case NE:
-                this.raceCarPicture = new Picture(xPosition,yPosition,"resources/smallCarNE.png");
+                deleteCarBody();
+                this.raceCarPicture = new Picture(getX()-10,getY(),"resources/smallCarNE.png");
+                raceCarPicture.draw();
+                currentDirection = newDirection;
                 break;
         }
     }
 
-    //testing purposes methods
-
-    public void moveLeft() {
-        this.raceCarPicture.translate(-10, 00);
-    }
-
-    public void moveRight() {
-        this.raceCarPicture.translate(10, 0);
+    private void deleteCarBody(){
+        if(raceCarPicture == null){
+            return;
+        }
+        raceCarPicture.delete();
     }
 
 
