@@ -13,20 +13,22 @@ public class CarControls implements KeyboardHandler {
     private Player currentPlayer;
     private Keyboard keyboard;
     private Car car;
+    KeyboardEvent aPressed;
+    KeyboardEvent dPressed;
 
     public void init() {
 
         keyboard = new Keyboard(this);
 
         // -- A -- //
-        KeyboardEvent aPressed = new KeyboardEvent();
+        this.aPressed = new KeyboardEvent();
         aPressed.setKey(KeyboardEvent.KEY_A);
         aPressed.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
 
         keyboard.addEventListener(aPressed);
 
         // -- D -- //
-        KeyboardEvent dPressed = new KeyboardEvent();
+        this.dPressed = new KeyboardEvent();
         dPressed.setKey(KeyboardEvent.KEY_D);
         dPressed.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
 
@@ -61,5 +63,10 @@ public class CarControls implements KeyboardHandler {
 
     public void setCurrentPlayer(Player currentPlayer) {
         this.currentPlayer = currentPlayer;
+    }
+
+    public void stop(){
+        keyboard.removeEventListener(aPressed);
+        keyboard.removeEventListener(dPressed);
     }
 }

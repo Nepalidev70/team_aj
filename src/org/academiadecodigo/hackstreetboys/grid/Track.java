@@ -20,5 +20,7 @@ public interface Track {
     public int columnToX(int column);
     public void buildRoad(Color color);
     public boolean isOnRoad(int nextX, int nextY);
+    public boolean hasFinished(int x, int y);
+    public void deleteTrack();
 
 }

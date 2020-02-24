@@ -57,6 +57,7 @@ public class SplashScreen implements KeyboardHandler {
                 }
             }
         }
+        keyboard.removeEventListener(spacePressed);
         background.delete();
     }
 
