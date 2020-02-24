@@ -2,11 +2,14 @@ package org.academiadecodigo.hackstreetboys.grid;
 
 
 import org.academiadecodigo.hackstreetboys.GameLogic;
+import org.academiadecodigo.hackstreetboys.music.JLayer;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
+
+import java.io.File;
 
 public class SplashScreen implements KeyboardHandler {
 

@@ -33,10 +33,6 @@ public class GameLogic {
             music.start();
 
 
-
-
-
-
             Thread timerThread = new Thread(new Runnable() {
                 @Override
                 public void run() {
@@ -49,11 +45,17 @@ public class GameLogic {
             Thread movementThread = new Thread(new Runnable() {
                 @Override
                 public void run() {
+                    int currentSpeed = 200;
                     while (true){
-                        MovementLogic.moveCar(car1,trackOne);
                         try {
-                            Thread.sleep(100);
+                            Thread.sleep(currentSpeed);
                         } catch (InterruptedException e) {}
+                        Boolean isMoving = MovementLogic.moveCar(car1,trackOne);
+                        if(isMoving && currentSpeed>= 50){
+                            currentSpeed -= 7;
+                        } else if(!isMoving){
+                            currentSpeed = 200;
+                        }
 
                     }
                 }
