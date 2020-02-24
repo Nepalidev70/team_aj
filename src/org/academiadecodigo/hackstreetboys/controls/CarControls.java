@@ -2,6 +2,7 @@ package org.academiadecodigo.hackstreetboys.controls;
 
 import org.academiadecodigo.hackstreetboys.gameobjects.Car;
 import org.academiadecodigo.hackstreetboys.Player;
+import org.academiadecodigo.hackstreetboys.moveLogic.Direction;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
@@ -39,12 +40,11 @@ public class CarControls implements KeyboardHandler {
         switch (keyboardEvent.getKey()) {
 
             case KeyboardEvent.KEY_A:
-                this.car.moveLeft();
+                car.setCurrentDirection(Direction.nextDirection(car.getCurrentDirection(),false));
                 break;
 
             case KeyboardEvent.KEY_D:
- //               System.out.println("called");
-                this.car.moveRight();
+                car.setCurrentDirection(Direction.nextDirection(car.getCurrentDirection(),true));
                 break;
         }
 

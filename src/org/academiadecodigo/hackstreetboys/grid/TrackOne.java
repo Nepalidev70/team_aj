@@ -17,7 +17,7 @@ public class TrackOne implements Track {
     private Rectangle rectangle;
 
     private Direction carStartingDirection = Direction.E;
-    private static final int carStartX = 10;
+    private static final int carStartX = 20;
     private static final int carStartY = 320;
 
     private LinkedList<Rectangle> roadRectangleContainer = new LinkedList<>();
@@ -136,6 +136,30 @@ public class TrackOne implements Track {
     public boolean isOnRoad(int nextX, int nextY){
         boolean finalBoolean = false;
         for(Rectangle road : roadRectangleContainer){
+            /*
+            System.out.println("---");
+            System.out.println(nextX);
+            System.out.println( ">=" );
+            System.out.println(road.getX());
+            System.out.println("---");
+            System.out.println(nextX);
+            System.out.println("<=");
+            System.out.println(road.getWidth());
+            System.out.println(nextX <= road.getX() + road.getWidth());
+            System.out.println("----");
+            System.out.println(nextY);
+            System.out.println(">=");
+            System.out.println(road.getY());
+            System.out.println(nextY >= road.getY());
+            System.out.println("----");
+            System.out.println(nextY);
+            System.out.println("<=");
+            System.out.println(road.getHeight());
+            System.out.println(nextY <= road.getY() + road.getHeight());
+            System.out.println("---");
+            System.out.println("END OF RECTANGLE");
+
+             */
             if(nextX >= road.getX() && nextX <= road.getX() + road.getWidth() && nextY >= road.getY() && nextY <= road.getY() + road.getHeight() ){
                 finalBoolean = true;
             }
