@@ -2,16 +2,22 @@ package org.academiadecodigo.hackstreetboys.grid;
 
 
 import org.academiadecodigo.hackstreetboys.GameLogic;
+import org.academiadecodigo.hackstreetboys.music.JLayer;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
+import java.io.File;
+
 public class SplashScreen implements KeyboardHandler {
 
     private boolean keyPressed;
     private Picture background = new Picture();
+    String path = "resources/The_Chain.mp3";
+    File mp3File = new File(path);
+    JLayer.PlayMp3 music = new JLayer.PlayMp3();
 
     Keyboard keyboard = new Keyboard(this);
 
@@ -23,12 +29,15 @@ public class SplashScreen implements KeyboardHandler {
         spacePressed.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         keyboard.addEventListener(spacePressed);
 
+        music.play(mp3File);
+        music.start();
+
         while (!keyPressed) {
             boolean draw1 = false;
 
             if (!draw1) {
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(750);
                     background.load("resources/SplashScreen1.png");
                     background.draw();
                     draw1 = true;
@@ -39,7 +48,7 @@ public class SplashScreen implements KeyboardHandler {
             }
             if (draw1) {
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(750);
                     background.load("resources/SplashScreen2.png");
                     background.draw();
                     draw1 = false;
@@ -58,6 +67,8 @@ public class SplashScreen implements KeyboardHandler {
             case KeyboardEvent.KEY_SPACE:
                 keyPressed = true;
                 GameLogic gameLogic = new GameLogic();
+                music.stop();
+
                 break;
         }
     }
