@@ -1,10 +1,10 @@
 <?xml version="1.0" ?>
 
-<project name="carGame" default="jarfile">
+<project name="StreetRacer" default="jarfile">
 
     <!-- Initialize build properties  -->
     <target name="init" description="Initializes properties">
-        <property name="project.name" value="carGame" />
+        <property name="project.name" value="StreetRacer" />
         <property name="src.dir" value="src" />
         <property name="main.class" value="org.academiadecodigo.hackstreetboys.Main" />
         <property name="build.dir" value="build" />
