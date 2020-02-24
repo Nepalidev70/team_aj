@@ -8,7 +8,7 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 import java.util.LinkedList;
 import java.util.List;
 
-public class  TrackOne implements Track {
+public class TrackOne implements Track {
 
     public static final int PADDING = 10;
     private int cols;
